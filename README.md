@@ -1,1 +1,1 @@
-# config-taiki
+# Config
