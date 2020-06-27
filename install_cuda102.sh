@@ -11,14 +11,11 @@ sudo apt-get update
 sudo apt-get install -y linux-headers-$(uname -r)
 
 # Install cuda
-# https://developer.nvidia.com/cuda-10.1-download-archive-base
-wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
-sudo dpkg -i cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
-sudo apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
-sudo apt-get update
-sudo apt-get install cuda
-rm ./cuda-repo-ubuntu1804_10.1.105-1_amd64.deb
+# https://developer.nvidia.com/cuda-10.2-download-archive-base
+wget http://developer.download.nvidia.com/compute/cuda/10.2/Prod/local_installers/cuda_10.2.89_440.33.01_linux.run
+sudo sh cuda_10.2.89_440.33.01_linux.run
+rm ./cuda_10.2.89_440.33.01_linux.run
 
 # Environment setup
-export PATH=/usr/local/cuda-10.1/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+echo PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}} >> ~/.bachrc
+echo LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} >> ~/.bachrc
