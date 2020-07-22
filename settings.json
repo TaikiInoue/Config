@@ -1,0 +1,50 @@
+{
+    //
+    // editor settings
+    "editor.cursorStyle": "block",
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "boundary",
+    //
+    // formatter settings
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false,
+    //
+    // linter settings
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=E501,W503"
+    ],
+    //
+    // isort settings
+    "python.sortImports.args": [
+        "-m 3"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    //
+    // python settings
+    "python.pythonPath": "/Users/taiki/anaconda3/envs/main/bin/python",
+    "python.jediEnabled": false,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    //
+    // remote settings
+    "remote.SSH.useLocalServer": false,
+    "remote.SSH.remotePlatform": {
+        "inoue.thermaltake": "linux"
+    },
+    "remote.containers.defaultExtensions": [
+        "ms-python.python",
+        "mhutchie.git-graph",
+        "vscode-icons-team.vscode-icons"
+    ],
+    "docker.host": "ssh://inoue@192.168.3.6",
+    "python.languageServer": "Microsoft"
+}
