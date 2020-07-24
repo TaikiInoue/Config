@@ -18,8 +18,9 @@ sudo dpkg -i cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb
 sudo apt-key add /var/cuda-repo-10-2-local-10.2.89-440.33.01/7fa2af80.pub
 sudo apt-get update
 sudo apt-get -y install cuda-10-2
+rm cuda-repo-ubuntu1804-10-2-local-10.2.89-440.33.01_1.0-1_amd64.deb
 
 # Environment setup
-echo export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}} >> ~/.bashrc
-echo export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} >> ~/.bashrc
+echo export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}} >> ~/.zshrc
+echo export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}} >> ~/.zshrc
 sudo reboot
