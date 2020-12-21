@@ -1,12 +1,18 @@
 {
     //
     // editor settings
-    "editor.cursorStyle": "block",
+    "editor.cursorStyle": "line",
     "editor.tabSize": 4,
-    "editor.renderWhitespace": "boundary",
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        99
+    ],
     //
     // formatter settings
     "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=99"
+    ],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": false,
     "editor.formatOnType": false,
@@ -18,19 +24,39 @@
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Args": [
-        "--ignore=E501,W503"
+        "--ignore=E203,E501,W503"
     ],
     //
     // isort settings
     "python.sortImports.args": [
-        "-m 3"
+        "-rc",
+        "--atomic"
     ],
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": true
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
     },
     //
+    // vim settings
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    //
+    // shell settings
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    //
     // python settings
-    "python.pythonPath": "/Users/taiki/anaconda3/envs/main/bin/python",
+    "python.pythonPath": "/opt/conda/bin/python",
     "python.jediEnabled": false,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
@@ -38,13 +64,24 @@
     // remote settings
     "remote.SSH.useLocalServer": false,
     "remote.SSH.remotePlatform": {
-        "inoue.thermaltake": "linux"
+        "inoue.thermaltake": "linux",
+        "inoue.momo": "linux",
+        "inoue.metis": "linux",
+        "inoue.xavier": "linux"
     },
     "remote.containers.defaultExtensions": [
         "ms-python.python",
         "mhutchie.git-graph",
         "vscode-icons-team.vscode-icons"
     ],
-    "docker.host": "ssh://inoue@192.168.3.6",
-    "python.languageServer": "Microsoft"
+    "docker.host": "ssh://inoue.metis",
+    "python.languageServer": "Microsoft",
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.inheritEnv": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": 0,
+    "jupyter.askForKernelRestart": false,
+    "jupyter.textOutputLimit": 40000
 }
